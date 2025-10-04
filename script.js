@@ -75,9 +75,15 @@ const malla = {
   ]
 };
 
+console.log("Cargando malla con", Object.keys(malla).length, "semestres");
+
 /* DOM refs */
 const container = document.getElementById('malla-container');
 const mensaje = document.getElementById('mensaje');
+
+if (!container) {
+  console.error("No se encontró el contenedor #malla-container");
+}
 
 /* Mapas */
 const courseMap = new Map();
@@ -88,6 +94,8 @@ let selectedCourses = new Set();
 
 /* Crear UI */
 Object.keys(malla).forEach(semestre => {
+  console.log("Creando semestre:", semestre);
+  
   const semDiv = document.createElement('div');
   semDiv.className = 'semestre';
 
@@ -112,6 +120,8 @@ Object.keys(malla).forEach(semestre => {
 
   container.appendChild(semDiv);
 });
+
+console.log("Total de ramos creados:", courseMap.size);
 
 /* Dependientes */
 courseMap.forEach((obj, nombre) => {
@@ -141,7 +151,6 @@ function updateLocks() {
       el.classList.add('completed');
     } else if (canUnlock(nombre)) {
       el.classList.add('unlocked');
-      // Mostrar si está seleccionado
       if (selectedCourses.has(nombre)) {
         el.classList.add('selected');
       }
@@ -164,7 +173,6 @@ function showMessage(text, duration = 3000) {
 courseMap.forEach((obj, nombre) => {
   const el = obj.element;
   el.addEventListener('click', (e) => {
-    // Si ya está completado, desmarcar
     if (obj.completed) {
       const toUnmark = new Set();
       function dfs(u) {
@@ -178,7 +186,6 @@ courseMap.forEach((obj, nombre) => {
       return;
     }
 
-    // Verificar si puede desbloquearse
     if (!canUnlock(nombre)) {
       el.classList.add('shake');
       setTimeout(() => el.classList.remove('shake'), 360);
@@ -186,7 +193,6 @@ courseMap.forEach((obj, nombre) => {
       return;
     }
 
-    // Selección múltiple con Ctrl/Cmd + clic
     if (e.ctrlKey || e.metaKey) {
       if (selectedCourses.has(nombre)) {
         selectedCourses.delete(nombre);
@@ -201,9 +207,8 @@ courseMap.forEach((obj, nombre) => {
       return;
     }
 
-    // Si hay ramos seleccionados, marcarlos todos
     if (selectedCourses.size > 0) {
-      selectedCourses.add(nombre); // Añadir el actual también
+      selectedCourses.add(nombre);
       let count = 0;
       selectedCourses.forEach(courseName => {
         const courseObj = courseMap.get(courseName);
@@ -221,7 +226,6 @@ courseMap.forEach((obj, nombre) => {
       return;
     }
 
-    // Marcar solo este ramo
     obj.completed = true;
     updateLocks();
     showMessage('¡Felicidades Antito, eres la mejor! 💖', 3000);
@@ -230,3 +234,5 @@ courseMap.forEach((obj, nombre) => {
 
 /* Estado inicial */
 updateLocks();
+
+console.log("Script cargado completamente");
