@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Malla Interactiva - Enfermería</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Malla Interactiva - Enfermería</h1>
-    <p>Haz clic en un ramo para ver sus prerrequisitos</p>
+    <p>Haz clic para <strong>marcar</strong> ramos completados. Solo puedes marcar los ramos desbloqueados (prerrequisitos completos).</p>
   </header>
 
+  <div id="controls">
+    <button id="resetBtn" title="Desmarcar todo">Resetear todo</button>
+  </div>
+
   <main id="malla-container">
-    <!-- Se genera dinámicamente con JS -->
+    <!-- Se genera dinámicamente -->
   </main>
 
-  <!-- Mensaje para Antito -->
-  <div id="mensaje"></div>
+  <!-- Mensaje suave para Antito -->
+  <div id="mensaje" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
