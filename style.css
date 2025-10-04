@@ -74,19 +74,26 @@ header p { color: #6b3b57; }
 
 /* Mensaje */
 #mensaje {
-  margin-top: 18px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
   font-size: 1.25rem;
-  color: #d63384;
+  color: #fff;
+  background: linear-gradient(135deg, #e91e63, #f48fb1);
   font-weight: 700;
   text-align: center;
-  min-height: 36px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.4);
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.3s ease;
-  transform: translateY(-6px);
+  z-index: 1000;
+  max-width: 90%;
 }
 #mensaje.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 /* feedback shake cuando se intenta marcar bloqueado */
 @keyframes shake {
