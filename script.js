@@ -66,7 +66,7 @@ const malla = {
     { nombre: "Oferta variable PEG 8", prereq: [] }
   ],
   "IX SEM": [
-    { nombre: "Introducción al ejercicio profesional de enfermería", prereq: ["Licenciatura en enfermería"] }
+    { nombre: "Introducción al ejercicio profesional de enfermería", prereq: [] }
   ],
   "X SEM": [
     { nombre: "Internado profesional en el ámbito hospitalario adulto/niño", prereq: ["Introducción al ejercicio profesional de enfermería"] },
