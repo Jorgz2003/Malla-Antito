@@ -224,7 +224,7 @@ for (let [nombre, obj] of courseMap) {
       updateLocks();
       
       if (count > 0) {
-        showMessage('¡Felicidades Antito, eres la mejor! 💖 (' + count + ' ramo' + (count > 1 ? 's' : '') + ' completado' + (count > 1 ? 's' : '') + ')', 3500);
+        showMessage('¡Felicidades Antito, eres la mejor! 💗 (' + count + ' ramo' + (count > 1 ? 's' : '') + ' completado' + (count > 1 ? 's' : '') + ')', 3500);
       }
       return;
     }
@@ -232,7 +232,7 @@ for (let [nombre, obj] of courseMap) {
     // Marcar solo este
     obj.completed = true;
     updateLocks();
-    showMessage('¡Felicidades Antito, eres la mejor! 💖', 3000);
+    showMessage('¡Felicidades Antito, eres la mejor! 💗', 3000);
   });
 }
 
