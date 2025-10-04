@@ -1,4 +1,4 @@
-/* Datos de la malla */
+/* Datos completos de la malla */
 const malla = {
   "I SEM": [
     { nombre: "Ciencias básicas para la salud", prereq: [] },
@@ -19,48 +19,54 @@ const malla = {
     { nombre: "Oferta variable PEG 3", prereq: [] }
   ],
   "III SEM": [
-    { nombre: "Farmacología", prereq: ["Fisiología"] },
     { nombre: "Fisiopatología", prereq: ["Fisiología"] },
-    { nombre: "Enfermería del adulto I", prereq: ["Proceso enfermero en el ciclo vital"] },
+    { nombre: "Farmacología", prereq: ["Microbiología y parasitología", "Fisiología"] },
+    { nombre: "Cuidados de enfermería I", prereq: ["Proceso enfermero en el ciclo vital"] },
     { nombre: "Educación para la salud II", prereq: ["Educación para la salud I"] },
-    { nombre: "Teología II", prereq: ["Teología I PEG 2"] },
-    { nombre: "Ética PEG 4", prereq: [] }
+    { nombre: "Relación de ayuda", prereq: [] },
+    { nombre: "Bioestadística", prereq: [] },
+    { nombre: "Minor 1", prereq: [] }
   ],
   "IV SEM": [
-    { nombre: "Semiología y examen físico", prereq: ["Fisiopatología"] },
-    { nombre: "Enfermería del adulto II", prereq: ["Enfermería del adulto I"] },
-    { nombre: "Enfermería en salud mental y psiquiatría", prereq: ["Proceso enfermero en el ciclo vital"] },
-    { nombre: "Salud pública", prereq: [] },
-    { nombre: "Oferta variable PEG 5", prereq: [] }
+    { nombre: "Cuidados de enfermería II", prereq: ["Cuidados de enfermería I"] },
+    { nombre: "Introducción a la enfermería comunitaria", prereq: ["Educación para la salud II"] },
+    { nombre: "Inglés técnico para salud", prereq: [] },
+    { nombre: "Epidemiología y salud pública", prereq: ["Bioestadística"] },
+    { nombre: "Minor 2", prereq: [] },
+    { nombre: "Teología II PEG 4", prereq: [] }
   ],
   "V SEM": [
-    { nombre: "Enfermería del adulto mayor", prereq: ["Enfermería del adulto II"] },
-    { nombre: "Enfermería del niño y adolescente I", prereq: ["Proceso enfermero en el ciclo vital"] },
-    { nombre: "Enfermería en salud sexual y reproductiva", prereq: ["Proceso enfermero en el ciclo vital"] },
-    { nombre: "Epidemiología", prereq: ["Salud pública"] },
-    { nombre: "Oferta variable PEG 6", prereq: [] }
+    { nombre: "Enfermería clínica del adulto y persona mayor", prereq: ["Cuidados de enfermería II", "Farmacología", "Fisiopatología"] },
+    { nombre: "Enfermería en la comunidad I", prereq: ["Introducción a la enfermería comunitaria"] },
+    { nombre: "Enfermería y emprendimiento", prereq: [] },
+    { nombre: "Metodología de la investigación", prereq: ["Bioestadística"] },
+    { nombre: "Minor 3", prereq: [] }
   ],
   "VI SEM": [
-    { nombre: "Enfermería del adulto en estado crítico", prereq: ["Enfermería del adulto II"] },
-    { nombre: "Enfermería del niño y adolescente II", prereq: ["Enfermería del niño y adolescente I"] },
-    { nombre: "Enfermería materno perinatal", prereq: ["Enfermería en salud sexual y reproductiva"] },
-    { nombre: "Gestión del cuidado", prereq: [] },
-    { nombre: "Oferta variable PEG 7", prereq: [] }
+    { nombre: "Enfermería de la mujer", prereq: ["Enfermería clínica del adulto y persona mayor"] },
+    { nombre: "Enfermería del niño y adolescente", prereq: ["Enfermería clínica del adulto y persona mayor"] },
+    { nombre: "Enfermería en la comunidad II", prereq: ["Enfermería en la comunidad I"] },
+    { nombre: "Práctica basada en la evidencia", prereq: ["Metodología de la investigación"] },
+    { nombre: "Ética PEG 5", prereq: [] }
   ],
   "VII SEM": [
-    { nombre: "Enfermería en urgencias y desastres", prereq: ["Enfermería del adulto en estado crítico"] },
-    { nombre: "Enfermería comunitaria y familiar", prereq: ["Epidemiología"] },
-    { nombre: "Investigación en enfermería I", prereq: [] },
-    { nombre: "Oferta variable PEG 8", prereq: [] }
+    { nombre: "Enfermería gerontogeriátrica", prereq: ["Enfermería clínica del adulto y persona mayor"] },
+    { nombre: "Cuidados de fin de la vida", prereq: ["Enfermería clínica del adulto y persona mayor"] },
+    { nombre: "Ética profesional aplicada", prereq: ["Ética PEG 5"] },
+    { nombre: "Gestión y administración en salud", prereq: ["Práctica basada en la evidencia"] },
+    { nombre: "Oferta variable PEG 6", prereq: [] }
   ],
   "VIII SEM": [
-    { nombre: "Enfermería en cuidados paliativos", prereq: ["Enfermería del adulto mayor"] },
-    { nombre: "Bioética", prereq: ["Ética PEG 4"] },
-    { nombre: "Investigación en enfermería II", prereq: ["Investigación en enfermería I"] },
-    { nombre: "Práctica profesional menor", prereq: ["Enfermería comunitaria y familiar"] }
+    { nombre: "Enfermería en situaciones de urgencia", prereq: ["Enfermería clínica del adulto y persona mayor"] },
+    { nombre: "Enfermería en salud mental y psiquiatría", prereq: ["Práctica basada en la evidencia"] },
+    { nombre: "Liderazgo y gestión de equipos de salud", prereq: ["Gestión y administración en salud"] },
+    { nombre: "Innovación", prereq: ["Práctica basada en la evidencia"] },
+    { nombre: "Seminario de investigación", prereq: ["Metodología de la investigación"] },
+    { nombre: "Teología III PEG 7", prereq: [] },
+    { nombre: "Oferta variable PEG 8", prereq: [] }
   ],
   "IX SEM": [
-    { nombre: "Introducción al ejercicio profesional de enfermería", prereq: ["Práctica profesional menor"] }
+    { nombre: "Introducción al ejercicio profesional de enfermería", prereq: ["Licenciatura en enfermería"] }
   ],
   "X SEM": [
     { nombre: "Internado profesional en el ámbito hospitalario adulto/niño", prereq: ["Introducción al ejercicio profesional de enfermería"] },
