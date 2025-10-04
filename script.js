@@ -75,6 +75,7 @@ const malla = {
 };
 
 const container = document.getElementById('malla-container');
+const mensaje = document.getElementById('mensaje');
 
 // Generar HTML
 Object.keys(malla).forEach(semestre => {
@@ -114,6 +115,15 @@ allRamos.forEach(ramo => {
         r.classList.add('prereq');
       }
     });
+
+    // Mostrar mensaje especial 💖
+    mensaje.textContent = "¡Felicidades Antito, eres la mejor 💖!";
+    mensaje.classList.add('show');
+
+    // Ocultar después de 3s
+    setTimeout(() => {
+      mensaje.classList.remove('show');
+    }, 3000);
   });
 });
 
