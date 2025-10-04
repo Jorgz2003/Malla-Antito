@@ -1,5 +1,4 @@
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Segoe UI", Roboto, system-ui, sans-serif; }
-
 body {
   background: #fff5f7;
   color: #333;
@@ -9,10 +8,8 @@ body {
   padding: 18px;
   min-height: 100vh;
 }
-
 header { text-align: center; margin-bottom: 12px; }
 header p { color: #6b3b57; }
-
 #malla-container {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +17,6 @@ header p { color: #6b3b57; }
   max-width: 1200px;
   justify-content: center;
 }
-
 /* Semestres */
 .semestre {
   background: #ffe4ec;
@@ -29,13 +25,11 @@ header p { color: #6b3b57; }
   width: 260px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.06);
 }
-
 .semestre h2 {
   text-align: center;
   color: #d36b9d;
   margin-bottom: 8px;
 }
-
 /* Ramos */
 .ramo {
   background: #fce4ec;
@@ -47,26 +41,35 @@ header p { color: #6b3b57; }
   transition: all 0.22s ease;
   user-select: none;
 }
-
 .ramo.unlocked {
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 .ramo.unlocked:hover { transform: translateY(-3px); }
-
 .ramo.locked {
   opacity: 0.5;
   cursor: not-allowed;
   filter: grayscale(8%);
   border-style: dashed;
 }
-
 .ramo.completed {
   background: #f48fb1;
   border: 2px solid #c2185b;
   color: #fff;
   font-weight: 600;
   transform: scale(1.02);
+}
+
+/* Nuevo: Estado de selección múltiple */
+.ramo.selected {
+  background: #ffa4c7;
+  border: 2px solid #e91e63;
+  box-shadow: 0 0 12px rgba(233, 30, 99, 0.4);
+  transform: scale(1.05);
+}
+
+.ramo.selected:hover {
+  transform: scale(1.05) translateY(-2px);
 }
 
 /* Mensaje */
@@ -85,7 +88,6 @@ header p { color: #6b3b57; }
   opacity: 1;
   transform: translateY(0);
 }
-
 /* feedback shake cuando se intenta marcar bloqueado */
 @keyframes shake {
   0% { transform: translateX(0); }
